@@ -1,0 +1,54 @@
+import math
+
+def calculator():
+    print("выберете операцию:")
+    print("1. сложение")
+    print("2. вычитание")
+    print("3. умножение")
+    print("4. деление")
+    print("5. возведение в степень")
+    print("6. квадратный корень")
+    print("7. факториал")
+    print("8. синус")
+    print("9. косинус")
+    print("10. тангенс")
+    
+    choice = input("номер операции: ")
+    
+    if choice in ('1', '2', '3', '4', '5'):
+        x = float(input("первое число: "))
+        y = float(input("второе число: "))
+    elif choice in ('6', '7', '8', '9', '10'):
+        x = float(input("введите число: "))
+    
+    if choice == '1':
+        print("результат:", x + y)
+    elif choice == '2':
+        print("результат:", x - y)
+    elif choice == '3':
+        print("резултат:", x * y)
+    elif choice == '4':
+        if y == 0:
+            print("делить на 0 нельзя!")
+        else:
+            print("результат:", x / y)
+    elif choice == '5':
+        print("результат:", x ** y)
+    elif choice == '6':
+        print("результат:", math.sqrt(x))
+    elif choice == '7':
+        print("результат:", math.factorial(int(x)))
+    elif choice == '8':
+        print("результат:", math.sin(x))
+    elif choice == '9':
+        print("результат:", math.cos(x))
+    elif choice == '10':
+        print("результат:", math.tan(x))
+    else:
+        print("неправильный выбор")
+
+while True:
+    calculator()
+    again = input("продолжаем? да или нет?: ")
+    if again.lower() != "да":
+        break
